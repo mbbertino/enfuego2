@@ -2,18 +2,44 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    vertical-align: top;
 }
+
+@mixin inputvalue {
+    font-weight: bold;
+    color: rgba(45, 45, 45, .5);
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 550px;
+    height: 40px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &:focus::-webkit-input-placeholder { color:transparent; };
+    }
+
+
+@mixin mybutton {
+    color: rgba(45, 45, 45, .5);
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: auto;
+    height: 40px;
+    font-size: 18px;                    
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.53);
+    transition: 0.2s ease;
+    
+        &:hover {
+            background-color: darken(rgb(192,192,192), 20%);
+            color: rgba(255, 255, 255, .5);
+        }
+    }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -25,22 +51,57 @@ body {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid rgba(255, 255, 255, .9);
+    height: 80px;
+    background-color: rgba(255, 255, 255, .9);
 
+    .container {
+        line-height: 60px;
+        text-align: center;
     /* Make the masthead heading the same height as the navigation */
-    h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 40px;
-        padding-bottom: 19px;
+
+        .picshare-sub-logo {
+            margin-top: 10px;
+            margin-bottom: auto;
+            height: 60px;
+        }
+        h1 {
+            margin-top: 10px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto; 
+            line-height: 60px;
+            letter-spacing: 10px;
+            font-weight: 100;
+            font-size: 32px;
+        }
+        .nav {
+            text-transform: uppercase;
+
+            a {
+                font-weight: 200;
+                color: black;
+                letter-spacing: 2px;
+            }
+        }
     }
 }
 
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
+    position: relative;
     color: #777;
-    border-top: 1px solid #e5e5e5;
+    background-color: rgb(45, 45, 45);
+    
+    .mainfoot {
+        height: 150px;
+    }
+
+    .subfooter {
+        height: 75px;
+        background-color: rgba(255, 255, 255, .9);
+    }
+
 }
 
 .container-narrow > hr {
@@ -48,12 +109,205 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
+.maincontent {
+    position: relative;
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    .btn {
-        font-size: 21px;
-        padding: 14px 24px;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+
+    .landingimage {
+        position: absolute;
+        z-index: 5;
+    }
+
+    .container {
+        position: relative;
+        z-index: 10;
+        height: 900px;
+        width: 960px;
+        padding-left:0;
+        padding-right:0;
+
+        .avatartainer {
+            display: none;
+            position: absolute;
+            top:50%; 
+            height: 700px; 
+            width: 100%;
+            margin-top:-25em;
+            background-color: rgba(226, 226, 224, .95);
+            border-radius: 6px; 
+            z-index: 15;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            .title {
+                    color: rgba(45, 45, 45, .5);
+                    text-transform: uppercase;
+                    font-weight: 100;
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                    text-align: center;
+                    text-decoration: underline;
+            }
+            .gallery-button {
+                @include mybutton;
+                margin-top: -40px;
+                border-radius: 6px;
+            }
+            .avatarbox {
+                background-color: #fff;
+                position: relative;
+                margin: 50px auto;
+                margin-right: 120px;
+                height: 125px;
+                width: 500px;
+                border-radius: 80px;
+
+                .avatarimage {
+                    position: absolute;
+                    left: -10px;
+                    border: 1px solid #fff;
+                    height: 125px;
+                    width: 125px;
+                    border-radius: 125px;
+                }
+                .avatarinfo {
+                    position:absolute; 
+                    top:50%; 
+                    height: auto; 
+                    width: 100%;
+                    margin-top:-39px;
+                    margin-left: 25px;
+                    color: rgba(45, 45, 45, .5);
+                    font-size: 18px;
+                }
+            }
+        }
+        .inputtainer { 
+            display: none;
+            position: absolute;
+            top:50%; 
+            height: auto; 
+            width: 100%;
+            margin-top:-15em;
+            background-color: rgba(226, 226, 224, .95);
+            border-radius: 6px; 
+            z-index: 15;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            &.avatar {
+
+               .title {
+                    color: rgba(45, 45, 45, .5);
+                    text-transform: uppercase;
+                    font-weight: 100;
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .input-field {
+                    @include inputvalue;
+                }
+
+                .btn {
+                    @include mybutton;
+                }
+            }
+            &.gal-img-upload {
+                padding-top: 60px;
+                padding-bottom: 60px;
+
+               .title {
+                    color: rgba(45, 45, 45, .5);
+                    text-transform: uppercase;
+                    font-weight: 100;
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .input-field {
+                    @include inputvalue;
+
+                    &.user-caption {
+                        transition: 0.2s ease;
+                        &:focus {
+                            height: 75px;
+                        }
+                    }
+                }
+
+                .btn {
+                    @include mybutton;
+                }   
+            }
+        }
+        .gallery {
+            display: none;
+            position: absolute;
+            top:50%; 
+            height: 870px; 
+            width: 100%;
+            margin-top:-31em;
+            background-color: rgba(226, 226, 224, .95);
+            border-radius: 6px; 
+            z-index: 15;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .vertically-center-div{
+            position:absolute; 
+            top:50%; 
+            height: auto; 
+            width: 100%;
+            margin-top:-20em;
+
+            .mainlogo {
+                margin-top: auto;
+                margin-bottom: auto;
+                height: 300px;
+                width: auto;
+            }
+            .start {
+                margin-top: 60px;
+                height: auto;
+                border-radius: 6px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+
+                .title {
+                    text-transform: uppercase;
+                    font-weight: 200;
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .sub-title {
+                    font-weight: 200;
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                    line-height: 3px;
+                    color: #fff;
+                }
+
+                .btn {
+                    @include mybutton;
+                    margin-bottom: 40px;
+                    letter-spacing: 2px;
+                    width: 300px;
+                }
+            }
+        }
     }
 }
 
@@ -68,7 +322,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 768px;
     }
 
     /* Remove the padding we set earlier */
@@ -81,7 +335,7 @@ body {
 
     /* Space out the masthead */
     .header {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
     
     /* Remove the bottom border on the jumbotron for visual effect */

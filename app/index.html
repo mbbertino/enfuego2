@@ -24,49 +24,74 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-
-        <div class="container">
-            <div class="header">
+        <div class="header">
+            <div class="container">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Gallery</a></li>
                 </ul>
-                <h3 class="text-muted">enfuego2</h3>
+                <img class="picshare-sub-logo pull-left" src="images/picsharesublogo.png">
+                <h1>PICSHARE</h1>
             </div>
-
-            <div class="jumbotron">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-            </div>
-
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-                    <h4>Sass with Compass</h4>
-                    <p>Compass is an open-source CSS Authoring Framework that uses Sass.</p>
-
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-
+        </div>
+        
+        <div class="img-responsive maincontent">
+            <img class="img-responsive landingimage" src="images/backgroundnew.jpg">
+            <div class="container">
+                <div class="inputtainer avatar">
+                    <span class="title">Create your avatar!</span>
+                    <input placeholder="What will be your username?"class="user-name input-field">
+                    <input placeholder="What is your email?"class="user-email input-field">
+                    <input placeholder="Where are you from?"class="user-location input-field">
+                    <input placeholder="What will you want your profile pic to be?"class="profile-pic input-field"><br>
+                    <button class="btn avatar-submit">submit</button>
+                </div>
+                <div class="avatartainer">
+                    <span class="title">Check it, you're apart of the revolution</span>
+                    <div class="avatar-innertainer"></div>
+                    <button class="gallery-button">Now Upload Photos</button>
+                </div>
+                <div class="inputtainer gal-img-upload">
+                    <span class="title">Upload an image!</span>
+                    <input placeholder="Upload a picture"class="user-img input-field">
+                    <input placeholder="Add a caption"class="user-caption input-field"><br>
+                    <button class="btn gal-submit">submit</button>
+                </div>
+                <div class="gallery">
+                </div>
+                <div class="vertically-center-div">
+                    <img class="mainlogo" src="images/picsharelogowhiteshadow.png"><br>
+                    <div class="start">
+                        <button class="btn get-started">get started</button><br>
+                        <span class="title">join the picshare revolution</span><br> 
+                        <span class="sub-title">Elegant photo storage and sharing is as easy as 1-2-3-4</span>
+                    </div>
                 </div>
             </div>
-
-            <div class="footer">
-                <p>♥ from the Yeoman team</p>
-            </div>
-
         </div>
 
+            <div class="footer">
+                <div class="mainfoot">
+                </div>
+                <div class="subfooter">
+                </div>
+            </div>
+        <script class="avatar-template" type="text/template">
+             <div class="avatarbox">
+                <img class="avatarimage pull-left"src="<%= avatarProfilePic %>">
+                <div class="avatarinfo">
+                    <span class="avatarusername">Username: <%= avatarUserName %></span><br>
+                    <span class="avataremail">Email: <%= avatarEmail %></span><br>
+                    <span class="avatarlocation">Location: <%= avatarLocation %></span><br>
+                </div>
+             </div>
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
