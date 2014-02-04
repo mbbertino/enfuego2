@@ -27,9 +27,9 @@
         <div class="header">
             <div class="container">
                 <ul class="nav nav-pills pull-right">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Gallery</a></li>
+                    <li class ="nav-home"><a>Home</a></li>
+                    <li class ="nav-about"><a>About</a></li>
+                    <li class ="nav-gal"><a>Gallery</a></li>
                 </ul>
                 <img class="picshare-sub-logo pull-left" src="images/picsharesublogo.png">
                 <h1>PICSHARE</h1>
@@ -40,7 +40,7 @@
             <img class="img-responsive landingimage" src="images/backgroundnew.jpg">
             <div class="container">
                 <div class="inputtainer avatar">
-                    <span class="title">Create your avatar!</span>
+                    <span class="title">Create your avatar!</span><br>
                     <input placeholder="What will be your username?"class="user-name input-field">
                     <input placeholder="What is your email?"class="user-email input-field">
                     <input placeholder="Where are you from?"class="user-location input-field">
@@ -53,12 +53,21 @@
                     <button class="gallery-button">Now Upload Photos</button>
                 </div>
                 <div class="inputtainer gal-img-upload">
-                    <span class="title">Upload an image!</span>
+                    <span class="title">Upload an image!</span><br>
                     <input placeholder="Upload a picture"class="user-img input-field">
                     <input placeholder="Add a caption"class="user-caption input-field"><br>
                     <button class="btn gal-submit">submit</button>
                 </div>
                 <div class="gallery">
+                    <span class="title">Gallery</span>
+                    <div class="gallerytainer">
+                    </div>
+                    <button class="add-another-photo pull-left">add a new photo</button>
+                    <button class="gallery-finish pull-right">finished</button>
+                </div>
+                <div class="thank-you">
+                    <span class="title">Thank you for contributing to Picshare</span><br>
+                    <span class="sub-title">Come back and see us soon!</span>
                 </div>
                 <div class="vertically-center-div">
                     <img class="mainlogo" src="images/picsharelogowhiteshadow.png"><br>
@@ -88,6 +97,15 @@
              </div>
         </script>
 
+
+        <script class="gallery-template" type="text/template">
+                <div class="gal-img-box">
+                    <img class="galimg" src="<%= url %>">
+                    <div class="caption">
+                        <span class="imgcaption"><%= caption %></span><br>
+                    </div>
+                </div>       
+        </script>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>

@@ -34,6 +34,7 @@ body {
     font-size: 18px;                    
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.53);
     transition: 0.2s ease;
+    border-radius: 6px; 
     
         &:hover {
             background-color: darken(rgb(192,192,192), 20%);
@@ -129,6 +130,38 @@ body {
         padding-left:0;
         padding-right:0;
 
+        .thank-you {
+            display: none;
+            position: absolute;
+            top:50%; 
+            height: 300px; 
+            width: 100%;
+            margin-top:-20em;
+            vertical-align: center;
+            border-radius: 6px; 
+            z-index: 15;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            .title {
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 100;
+                font-size: 32px;
+                letter-spacing: 2px;
+                width: 100%;   
+                padding-bottom: 10px;
+            }
+            .sub-title{
+                font-weight: 200;
+                font-size: 20px;
+                letter-spacing: 2px;
+                width: 100%;
+                line-height: 3px;
+                color: #fff;
+            }
+        }
+
         .avatartainer {
             display: none;
             position: absolute;
@@ -148,41 +181,44 @@ body {
                     font-weight: 100;
                     font-size: 32px;
                     letter-spacing: 2px;
-                    width: 100%;
-                    text-align: center;
-                    text-decoration: underline;
+                    width: 100%;   
+                    border-bottom: 1px solid rgba(45, 45, 45, .5);
+                    padding-bottom: 10px;
             }
             .gallery-button {
                 @include mybutton;
                 margin-top: -40px;
-                border-radius: 6px;
             }
-            .avatarbox {
-                background-color: #fff;
-                position: relative;
-                margin: 50px auto;
-                margin-right: 120px;
-                height: 125px;
-                width: 500px;
-                border-radius: 80px;
-
-                .avatarimage {
-                    position: absolute;
-                    left: -10px;
-                    border: 1px solid #fff;
+            .avatar-innertainer {   
+                .avatarbox {
+                    background-color: #fff;
+                    position: relative;
+                    margin: 50px auto;
                     height: 125px;
-                    width: 125px;
-                    border-radius: 125px;
-                }
-                .avatarinfo {
-                    position:absolute; 
-                    top:50%; 
-                    height: auto; 
-                    width: 100%;
-                    margin-top:-39px;
-                    margin-left: 25px;
-                    color: rgba(45, 45, 45, .5);
-                    font-size: 18px;
+                    width: 700px;
+                    border-radius: 80px;
+
+                    .avatarimage {
+                        position: absolute;
+                        left: -10px;
+                        top: -10px;
+                        border: 1px solid #fff;
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 125px;
+                    }
+                    .avatarinfo {
+                        position:absolute; 
+                        top: 50%; 
+                        left: 130px;
+                        height: auto; 
+                        width: 100%;
+                        margin-top:-39px;
+                        margin-left: 25px;
+                        color: rgba(45, 45, 45, .5);
+                        font-size: 18px;
+                        text-align: left;
+                    }
                 }
             }
         }
@@ -258,8 +294,67 @@ body {
             background-color: rgba(226, 226, 224, .95);
             border-radius: 6px; 
             z-index: 15;
-            padding-top: 20px;
+            padding-top: 7px;
             padding-bottom: 20px;
+
+            .title {
+                color: rgba(45, 45, 45, .5);
+                text-transform: uppercase;
+                font-weight: 100;
+                font-size: 40px;
+                letter-spacing: 2px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .gallerytainer {
+                display: inline-block;
+                margin: 0px auto;
+                height: 750px;
+                width: 100%;
+                overflow-y: scroll;
+                overflow-x: hidden; 
+
+                .gal-img-box {
+                    position: relative;
+                    display: inline-block;
+                    height: 300px;
+                    width: 300px;
+                    overflow: hidden;
+                    border-radius: 6px;
+                    margin: 1px 1px;
+
+                    .galimg{
+                        position: absolute;
+                        left: 0px;
+                        bottom: 0px;
+                        z-index: 1;
+                        height: 100%;
+                        width: 100%;
+                    }
+                    .caption {
+                        display: none;
+                        position: absolute;
+                        bottom: 0px;
+                        width: 100%;
+                        height: 75px;
+                        line-height: 75px;
+                        z-index: 2;
+                        color: #fff;
+                        background-color: rgba(0, 0, 0, 0.7);
+                    }
+                }
+            }
+            .add-another-photo {
+                @include mybutton;
+                margin-top: 0px;
+                margin-left: 16px;
+            }    
+            .gallery-finish {
+                @include mybutton;
+                margin-top: 0px;
+                margin-right: 32px;                
+            }
         }
         .vertically-center-div{
             position:absolute; 
@@ -322,7 +417,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 768px;
+        max-width: 960px;
     }
 
     /* Remove the padding we set earlier */
